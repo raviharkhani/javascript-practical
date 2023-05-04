@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>grid box</title>
+    <style>
+        .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  background-color: gray;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  height: 100px;
+}
+
+.green {
+	background-color: green;
+}
+
+.white {
+	background-color: white;
+}
+
+    </style>
+
+</head>
+<body>
+
+<div class="grid-container" >
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+  <div class="grid-item">10</div>
+  
+</div>
+
+</body>
+
+<script>
+    const divs = document.querySelectorAll('.grid-item');
+Array.from(divs).forEach(div => {
+    div.addEventListener('click', classToggler);
+});
+
+const colors = ['green', 'white',];
+let	enumerator = 0;
+
+function classToggler() {
+if (enumerator < colors.length+1){
+  	enumerator+=1;
+  }
+ else {enumerator=0};
+ 
+this.classList.add(colors[enumerator]);
+this.classList.remove(colors[enumerator-1]);
+};
+</script>
+
+
+
+</html>

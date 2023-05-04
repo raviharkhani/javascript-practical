@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hello world</title>
+
+    </head>
+<body>
+
+    <input type="text" name="u-name">
+    <button onclick="submitname()">submit</button>
+    <h1></h1>
+
+<script>
+     console.log("hello world!")
+
+     function submitname(){
+            var uname = document.getElementsByName('u-name')[0].value;
+            document.getElementsByName('u-name')[0].value = "";
+            document.getElementsByTagName('h1')[0].innerHTML = uname;
+        }
+</script>
+
+</body>
+</html>

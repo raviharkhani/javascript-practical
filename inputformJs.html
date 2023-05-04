@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+   <style>
+
+    body{
+      
+    }
+   
+   input{
+    width: 20%;
+    height: 30px;
+    font-size: x-large;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgb(198, 195, 195);
+    border-radius: 5px;
+   }
+
+   select{
+    height: 30px;
+    font-size: x-large;
+    font-weight: bold;
+    cursor: pointer;
+   background-color: darkturquoise;
+    border-radius: 5px;
+   }
+
+   button{
+    height: 30px;
+    font-size: x-large;
+    font-weight: bold;
+    cursor: pointer;
+   background-color: coral;
+    border-radius: 5px;
+   }
+
+   </style>
+
+<body>
+      
+    <input type="text" id="n1"/><br/><br/>
+    <input type="text" id="n2"/><br/><br/>
+
+    <select id="operators">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+
+    <button onclick="calc();">=</button><br/><br/>
+    <input type="text" id="result"/>
+    
+
+    <script>
+
+      function calc()
+      {
+        var n1 = parseFloat (document.getElementById('n1').value);
+        var n2 = parseFloat (document.getElementById('n2').value);
+        var oper = document.getElementById('operators').value;
+
+        if(oper === '+')
+        {
+           document.getElementById('result').value = n1+n2;
+        }
+
+        if(oper === '-')
+        {
+           document.getElementById('result').value = n1-n2;
+        }
+
+        if(oper === '*')
+        {
+           document.getElementById('result').value = n1*n2;
+        }
+
+        if(oper === '/')
+        {
+           document.getElementById('result').value = n1/n2;
+        }
+      }
+
+    </script>
+
+</body>
+</html>
