@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<style>
+    #btn{
+        padding: 10px 14px;
+        background-color: red;
+        border: 2px solid black;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="container">
+    <h1 id="name">ravi</h1>
+    <p id="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae repellat delectus unde modi quibusdam dolorum quo dolores vero incidunt, deleniti soluta tenetur esse veritatis? Voluptates, molestias repellendus. Modi itaque illum possimus, iste corporis beatae qui sed aut cum ullam cumque quisquam exercitationem maxime. A, repellendus? Enim magnam non exercitationem necessitatibus asperiores rem molestias nisi dicta.</p>
+</div>
+    <button id="btn"  onclick="toggleHide()">Show/hide</button>
+
+    <script>
+        function toggleHide(){
+            let btn = document.getElementById('btn');
+            let para = document.getElementById('para');
+            if(para.style.display != 'none'){
+            para.style.display = 'none';
+            }
+            else{
+                para.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #main{
+        margin: 25px auto 0px auto;
+        width: 20%;
+    }
+    #main h1{
+        display: block;
+        background-color: #203d3a;
+        color: #fff;
+        text-align: center;
+        line-height: 75px;
+        border-radius: 20px 20px 0px 0px;
+    }
+    #main img{
+        width: 100%;
+        border-radius: 0px 0px 20px 20px;
+        cursor: pointer;
+    }
+    #block1, #block2{
+        width: 100%;
+        float: left;
+        margin-bottom: 25px;
+    }
+</style>
+
+<body>
+    <div id="main">
+
+        <div id="bkock1">
+            <h1>Modiji</h1>
+            <img src="modi.jpg" id="img1">
+        </div>
+
+        <div id="bkock2">
+            <h1>Yogiji</h1>
+            <img src="yogi-adityanath.jpg" id="img2">
+        </div>
+
+    </div>
+
+<script>
+
+    document.getElementById('img1').addEventListener("mouseover", function() {this.style.filter = 'grayscale(0%)'});
+    document.getElementById('img1').addEventListener("mouseout", function(){this.style.filter = 'grayscale(100%)'});
+
+    document.getElementById('img2').addEventListener("mouseover", function(){this.style.filter = 'grayscale(0%)'});
+    document.getElementById('img2').addEventListener("mouseout", function(){this.style.filter = 'grayscale(100%)'});
+
+
+</script>
+
+</body>
+</html> -->
