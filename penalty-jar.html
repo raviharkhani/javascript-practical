@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #jar{
+            border: 1px solid black;
+            font-size: 40px;
+            padding: 20px;
+            margin-right: 1400PX;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id = "jar">0</div>
+    <button id="btn" onclick="add()">+10</button><br>
+
+    <input type="text" placeholder="Add Custom Value" id="input-value">
+
+    <script>
+        function add(){
+            let box = document.getElementById("jar");
+
+            let inputValue = document.getElementById("input-value");
+
+            if (inputValue.value != 0) {
+                box.innerHTML = parseInt(box.innerHTML) + parseInt(inputValue.value); 
+                document.getElementById("input-value").value = "";
+
+            }else{
+            box.innerHTML = parseInt(box.innerHTML)  + 10;
+            }          
+        }
+    </script>
+</body>
+</html>
