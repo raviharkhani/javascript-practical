@@ -34,21 +34,21 @@
     <table>
 
         <tr>
-            <td id="r1" onclick="printx('1')"></td>
-            <td id="r2" onclick="printx('2')"></td>
-            <td id="r3" onclick="printx('3')"></td>
+            <td id="r1" onclick="print('1')"></td>
+            <td id="r2" onclick="print('2')"></td>
+            <td id="r3" onclick="print('3')"></td>
         </tr>
 
         <tr>
-            <td id="r4" onclick="printx('4')"></td>
-            <td id="r5" onclick="printx('5')"></td>
-            <td id="r6" onclick="printx('6')"></td>
+            <td id="r4" onclick="print('4')"></td>
+            <td id="r5" onclick="print('5')"></td>
+            <td id="r6" onclick="print('6')"></td>
         </tr>
 
         <tr>
-            <td id="r7" onclick="printx('7')"></td>
-            <td id="r8" onclick="printx('8')"></td>
-            <td id="r9" onclick="printx('9')"></td>
+            <td id="r7" onclick="print('7')"></td>
+            <td id="r8" onclick="print('8')"></td>
+            <td id="r9" onclick="print('9')"></td>
         </tr>
 
     </table>
@@ -57,11 +57,13 @@
 
            let sign = "x";
 
-            function printx(number){
-                let isko = document.getElementById("r"+number);
-                console.log(isko);
-                isko.innerText=sign;
+            function print(number){
+                let play = document.getElementById("r"+number);
+                console.log(play);
+                if(play.innerText==""){
+                play.innerText=sign;
                 checksign();
+                }    
             }
 
              function checksign(){
