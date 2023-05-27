@@ -1,63 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<!DOCTYPE HTML>
-<html>
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-<style>
-   
-#board {
-    display: flex;
-    flex-wrap: wrap;
-    width: 400px;
-    height: 400px;
-    border: 2px solid black;
-}
 
-.tile {
-    width: 50px; 
-    height: 50px;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-.black {
-    background-color: black;
-}
+        #contain {
 
-.white {
-    background-color: white;
-}
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
 
-</style>
+        }
+
+        .tile {
+
+
+            border: 1px solid black;
+            height: 50px;
+            width: 50px;
+
+        }
+
+        .black {
+            background: black;
+        }
+    </style>
 
 </head>
+
 <body>
 
-<div id="board"></div>
+    <input type="text" placeholder="rows" id="m">
+    <input type="text" placeholder="columns" id="n"> <br> <br>
+    <button onclick="clkbox()">click here </button>
 
-   <script>
-      function createBoard(rows, columns) {
-  var board = document.getElementById("board");
 
-  for (var i = 0; i < rows; i++) {
-      for (var j = 0; j < columns; j++) {
-          var tile = document.createElement("div");
-          tile.classList.add("tile");
+    <div id="contain">
 
-          if ((i + j) % 2 === 0) {
-              tile.classList.add("black");
-          } else {
-              tile.classList.add("white");
-          }
 
-          board.appendChild(tile);
-      }
-  }
-}
+    </div>
 
-var m = parseInt(prompt("Enter the number of rows:"));
-var n = parseInt(prompt("Enter the number of columns:"));
+    <script>
+        function clkbox() {
+            var numofrows = Number(document.getElementById("m").value);
+            var numofcolums = Number(document.getElementById("n").value);
+            var board = document.getElementById("contain");
+            board.innerHTML = " "
+            board.style.width = 50 * numofrows + "px";
+            board.style.height = 50 * numofcolums + "px";
+            for (var i = 0; i < numofrows * numofcolums; i++) {
+                var tile = document.createElement("div");
+                var rowNumber = i / numofrows;
+                if (Math.floor(rowNumber) % 2 === 0 && numofrows % 2 === 0) {
+                    if (i % 2 !== 0) {
+                        tile.classList.add("black");
+                    }
 
-createBoard(m, n);
-   </script>
+                } else {
+                    if (i % 2 === 0) {
+                        tile.classList.add("black");
+                    }
+                }
+                tile.classList.add("tile");
+                board.appendChild(tile);
+            }
+
+        }
+
+    </script>
 
 </body>
+
 </html>
